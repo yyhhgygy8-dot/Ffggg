@@ -1,0 +1,14 @@
+services:
+  wireguard-panel:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - wg-panel-data:/data
+    environment:
+      PORT: "5000"
+      ADMIN_USERNAME: "admin"
+      ADMIN_PASSWORD: "change-this-now"
+      SECRET_KEY: "change-this-to-a-long-random-secret"
+volumes:
+  wg-panel-data:
